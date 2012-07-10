@@ -1,0 +1,16 @@
+#..TRK block. Save all of them as well.
+ntpBlockContents set "TRK  : MCIdx Momentum CMMomentum"
+fillAllCandsInList set "TRK ChargedTracks"
+
+#..Want to save all CalorNeutrals in the gamma block
+ntpBlockConfigs set "gamma   gamma  0      60"
+ntpBlockContents set "gamma: MCIdx Momentum"
+gamExtraContents set EMC
+fillAllCandsInList set "gamma CalorNeutral"
+
+
+trkExtraContents set "BitMap:pSelectorsMap,KSelectorsMap,piSelectorsMap,muSelectorsMap,eSelectorsMap,TracksMap"
+trkExtraContents set HOTS
+trkExtraContents set Eff:ave
+}
+

@@ -1,0 +1,35 @@
+#--------------- Turn on PID weights and neutral corrections ----------------
+
+#pidCfg_mode weight *
+
+talkto EmcNeutCorrLoader {
+    correctionOn set true
+#endcapShift  set true
+}
+
+#----------------------------------------------------------------------------
+#..Use $FilterOnTag to disable tag filtering if desired.
+module clone TagFilterByName TagJpsill
+module talk TagJpsill
+orList set JpsiELoose
+orList set JpsiMuLoose
+assertIfMissing set true
+exit
+if { $FilterOnTag=="true" } {
+    sequence append BetaMiniReadSequence -a KanEventUpdateTag TagJpsill
+}
+
+#-----------------------------------------------------------------------
+#..Run time options
+
+mod talk EvtCounter
+printFreq set $PrintFreq
+exit
+
+path list
+
+if { $NEvents>=0 } {
+    ev beg -nev $NEvents
+        exit
+}
+

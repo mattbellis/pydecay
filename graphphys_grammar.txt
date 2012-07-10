@@ -1,0 +1,15 @@
+stmt_list      : [ stmt ';' [ stmt_list ] ]
+stmt           : node_stmt
+                     |       edge_stmt
+                     |       default_stmt
+                     |       param_stmt
+default_stmt   : ('particle' | 'decay' ) param_list # Like 'node' and 'edge' in Dot
+param_list     : '[' [ param_sequence ] ']'
+param_sequence : ID [ '=' param_val ] [ ',' ] [ param_sequence ]
+param_val      : ID | param_list | float_number
+edge_stmt      : ID edgeRHS [ param_list ]
+edgeRHS        : edgeop node_set
+node_stmt      : ID [ param_list ]
+node_set       : '{' id_list '}'
+id_list        : ID [id_list]
+param_stmt     : ID '=' param_val

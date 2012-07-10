@@ -1,0 +1,15 @@
+Add Django validators?
+
+Change CSV import to use named column references (depends on Python 2.6)
+
+DOCUMENT
+
+Fix __str__ vs __repr__
+
+Diffing tool
+
+Add inclusive decays
+
+Get rid of some quotes
+
+Add numeric multiplication syntax?

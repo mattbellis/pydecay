@@ -1,0 +1,20 @@
+################################################################################
+# To install in your home directory
+################################################################################
+
+If you do not have a $HOME/libs directory, you should make one. 
+  
+  mkdir $HOME/libs
+
+Make a soft link in $HOME/libs to libs in youryour pydecay installation. 
+For instance, if you have installed pydecay in your home directory, 
+
+  ln -s $HOME/pydecay/pydecay $HOME/libs/
+
+Add this soft link to your PYTHONPATH environment variable.
+
+* In .cshrc 
+
+  setenv PYTHONPATH $HOME/libs/:${PYTHONPATH}
+
+

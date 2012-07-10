@@ -1,0 +1,17 @@
+#--------------------------------------------------------------------
+#..Use BtuTupleMaker to write out ntuples for SimpleComposition job
+path append Everything BtuTupleMaker
+
+talkto BtuTupleMaker {
+
+#..Event information to dump
+    eventBlockContents   set "EventID CMp4 BeamSpot"
+    eventTagsInt set "nTracks"
+    eventTagsFloat set "R2All xPrimaryVtx yPrimaryVtx zPrimaryVtx"
+    writeEveryEvent set false
+
+#..MC truth info
+    fillMC set true
+    mcBlockContents set "Mass CMMomentum Momentum Vertex"
+
+

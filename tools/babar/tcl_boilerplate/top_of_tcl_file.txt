@@ -1,0 +1,54 @@
+#  Main tcl file for analysis
+
+#..General setup needed in all jobs
+sourceFoundFile ErrLogger/ErrLog.tcl
+sourceFoundFile FrameScripts/FwkCfgVar.tcl
+sourceFoundFile FrameScripts/talkto.tcl
+
+#-------------- FwkCfgVars needed to control this job ---------------------
+set ProdTclOnly true
+
+#..allowed values of BetaMiniReadPersistence are "Kan", "Bdb"
+FwkCfgVar BetaMiniReadPersistence Kan
+
+#..allowed values of levelOfDetail are "micro", "cache", "extend" or "refit"
+FwkCfgVar levelOfDetail "cache"
+
+#..allowed values of ConfigPatch are "Run2" or "MC".
+# This is generally over ridden in the job control tcl file
+FwkCfgVar ConfigPatch "MC"
+
+#..Filter on tag bits by default
+FwkCfgVar FilterOnTag   "true"
+
+#..Print Frequency
+FwkCfgVar PrintFreq 1000
+
+#..Ntuple type and name
+FwkCfgVar BetaMiniTuple "root"
+FwkCfgVar histFileName "default.root"
+
+#..Number of Events defaults to 0 (run on full tcl file)
+FwkCfgVar NEvents 0
+
+################################################################################
+#..General physics sequences
+
+# Set to 'trace' to get info on a configuration problem
+ErrLoggingLevel warning
+
+#..btaMiniPhysics is the basic physics sequences;
+sourceFoundFile BetaMiniUser/btaMiniPhysics.tcl
+
+################################################################################
+# Needed for BremRecoElectrons
+sourceFoundFile CompositionSequences/CompPsiInitSequence.tcl
+
+#--------------------------------------------------------------------------
+#..Use SimpleComposition to make the candidates of interest
+
+#..Create Analysis sequence and append it to the path.
+#  All the composition modules get added to this sequence
+sequence create AnalysisSequence
+path append Everything AnalysisSequence
+

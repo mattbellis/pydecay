@@ -1,0 +1,31 @@
+################################################################################
+# README
+#
+# This README walks you through some intial tests of your install and gives you
+# some simple examples to see what PyDecay is all about.
+# 
+################################################################################
+
+Follow the INSTALL instructions.
+
+
+################################################################################
+################################################################################
+
+################################################################################
+# hello_world
+################################################################################
+
+Go into examples.
+
+ipython
+
+from ? import ?
+
+my_decay_object = pydecay.blah.file("jpsi_to_mumu.gp")
+
+my_decay_object.makethepicture
+my_decay_object.getthetoplevelparticle
+my_decay_object.getthedecaytree
+
+
