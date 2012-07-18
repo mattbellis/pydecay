@@ -6,10 +6,9 @@
 # 
 ################################################################################
 
-Follow the INSTALL instructions.
+The INSTALL file contains instructions for setting up PyDecay.
+Please read INSTALL before trying any examples.
 
-
-################################################################################This is a test. #Jamie
 ################################################################################
 
 ################################################################################
@@ -28,4 +27,22 @@ my_decay_object.makethepicture
 my_decay_object.getthetoplevelparticle
 my_decay_object.getthedecaytree
 
+################################################################################
+# Input template
+################################################################################
 
+You can find a template for construction an input file at [filepath].
+Compare this template with some of the examples in [directory].
+
+
+################################################################################
+# View an example output
+################################################################################
+
+To see what an output might look like, from pydecay/tools, use the command:
+
+> python dot_diagram.py ../examples/LambdaC.gp -o output.png
+
+(You can specify any image format you like. It does not have to be a PNG.)
+
+################################################################################
