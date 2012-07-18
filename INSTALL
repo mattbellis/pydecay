@@ -21,7 +21,9 @@ To get PyDecay set up in a Unix environment, do:
 
 pydecay/ > sudo python setup.py install
 
-[Common errors here.]
+The most common errors that could occur at this stage are dependency errors. 
+If you are missing one of the required packages, setup.py will not complete correctly. 
+If you receive an error that is not based on a package dependency, pleaseask for help on the githup pydecay page.
 
 #TEST THE INSTALL:
 To test that your install has worked, open a new terminal and do:
