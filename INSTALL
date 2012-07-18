@@ -1,20 +1,82 @@
 ################################################################################
-# To install in your home directory
+#DEPENDENCIES
 ################################################################################
 
-If you do not have a $HOME/libs directory, you should make one. 
-  
-  mkdir $HOME/libs
+REQUIRED:
+python
+pydot
+graphviz
+pyx
 
-Make a soft link in $HOME/libs to libs in youryour pydecay installation. 
-For instance, if you have installed pydecay in your home directory, 
+OPTIONAL:
+ipython
+pyfeyn (used for generating Feynman diagrams; this function is still in alpha testing)
 
-  ln -s $HOME/pydecay/pydecay $HOME/libs/
+################################################################################
+# SETUP - UNIX
+################################################################################
 
-Add this soft link to your PYTHONPATH environment variable.
+#SETUP:
+To get PyDecay set up in a Unix environment, do:
 
-* In .cshrc 
+pydecay/ > sudo python setup.py install
 
-  setenv PYTHONPATH $HOME/libs/:${PYTHONPATH}
+[Common errors here.]
 
+#TEST THE INSTALL:
+To test that your install has worked, open a new terminal and do:
 
+~ > python
+Python 2.7.1+ (r271:86832, Apr 11 2011, 18:05:24) 
+[GCC 4.5.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pydecay
+>>> exit()
+~ >
+
+If no warnings or errors appear, your install was successful.
+
+#IPYTHON INSTALL TEST:
+If you would like to test your install in ipython, open a new terminal and do:
+
+~ > ipython
+Python 2.7.1+ (r271:86832, Apr 11 2011, 18:05:24) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 0.10.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object'. ?object also works, ?? prints more.
+
+In [1]: import pydecay
+
+In [2]: pydecay. [TAB COMPLETE]
+pydecay.BRANCHING_FRACTION_PARAM  pydecay.__getattribute__
+pydecay.DECAY_MODE_IMPL           pydecay.__hash__
+pydecay.Decay                     pydecay.__init__
+pydecay.DecayConsistencyError     pydecay.__name__
+pydecay.DecayElement              pydecay.__new__
+pydecay.DoesNotExist              pydecay.__package__
+pydecay.PARTICLE_TYPE_IMPL        pydecay.__path__
+pydecay.Particle                  pydecay.__reduce__
+pydecay.ProcessGroup              pydecay.__reduce_ex__
+pydecay.__builtins__              pydecay.__repr__
+pydecay.__class__                 pydecay.__setattr__
+pydecay.__delattr__               pydecay.__sizeof__
+pydecay.__dict__                  pydecay.__str__
+pydecay.__doc__                   pydecay.__subclasshook__
+pydecay.__file__                  pydecay.db
+pydecay.__format__                pydecay.settings
+
+In [2]: exit()
+Do you really want to exit ([y]/n)? y
+~ >
+
+If there were no warnings or errors, and the TAB complete showed a list of PyDecay packages(?), then your install was successful.
+
+################################################################################
+# EXAMPLES
+################################################################################
+
+See the README file for examples.
