@@ -14,7 +14,8 @@ class BtmTclConverter(Converter):
                                      ).replace("+","c"
                                      ).replace("-","c"
                                      ).replace("(",""
-                                     ).replace(")","")
+                                     ).replace(")",""
+                                     ).replace("*","star")
         
             return variable_name
         
